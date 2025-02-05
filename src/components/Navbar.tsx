@@ -32,7 +32,7 @@ const Navbar = () => {
   return (
     <>
       <nav className="w-full max-w-full flex flex-col bg-white px-4 py-6 lg:px-16 lg:py-8 sticky top-0">
-        <div className="flex flex-row w-full max-w-[1024px] justify-between mx-auto">
+        <div className="flex flex-row w-full max-w-[1240px] justify-between mx-auto">
           <Link href={"/"}>
             <h1 className="font-bold text-[18px] text-[#F15025]">
               Spoon & Fork
