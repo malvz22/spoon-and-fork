@@ -15,7 +15,7 @@ const RecipeCard = () => {
         />
       </div>
       <p className="text-2xl">Recipe Title Here</p>
-      <div className="flex flex-row text-[#737373] gap-4">
+      <div className="flex flex-row text-[#737373] justify-between md:justify-normal md:gap-4">
         <div className="flex flex-row items-center gap-2">
           <PiTimerFill size={24} />
           <p>20 Mins</p>
@@ -25,7 +25,7 @@ const RecipeCard = () => {
           <p>1 Servings</p>
         </div>
         <div className="flex flex-row items-center gap-2">
-          <FaStar />
+          <FaStar color="#F15025" />
           <p>4.8</p>
         </div>
       </div>
