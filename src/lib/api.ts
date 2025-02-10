@@ -5,8 +5,8 @@ export const ratingConversion = (rating: number) => {
   return convertedRating;
 };
 
-export const GetRecipeResponse = async () => {
-  const url = `${process.env.NEXT_PUBLIC_API_BASE_URL}/recipes/complexSearch?apiKey=${process.env.NEXT_PUBLIC_API_KEY}&sort=meta-score`;
+export const getRecipeResponse = async (resource: string, query: string) => {
+  const url = `${process.env.NEXT_PUBLIC_API_BASE_URL}/${resource}?apiKey=${process.env.NEXT_PUBLIC_API_KEY}${query}`;
 
   const response = await fetch(url);
 
@@ -21,7 +21,7 @@ export const GetRecipeResponse = async () => {
   return recipes;
 };
 
-export const GetRecipeInfo = async (recipeId: number): Promise<Recipe> => {
+export const getRecipeInfo = async (recipeId: number): Promise<Recipe> => {
   if (!recipeId) throw new Error("Invalid recipe ID");
 
   const url = `${process.env.NEXT_PUBLIC_API_BASE_URL}/recipes/${recipeId}/information?apiKey=${process.env.NEXT_PUBLIC_API_KEY}`;
@@ -37,13 +37,13 @@ export const GetRecipeInfo = async (recipeId: number): Promise<Recipe> => {
   return recipeData;
 };
 
-export const GetMultipleRecipes = async (
+export const getMultipleRecipes = async (
   recipeId: number[]
 ): Promise<Recipe[]> => {
   if (!recipeId.length) throw new Error("No recipe IDs provided");
 
   const recipeInfo: Recipe[] = await Promise.all(
-    recipeId.map((id: number) => GetRecipeInfo(id))
+    recipeId.map((id: number) => getRecipeInfo(id))
   );
 
   return recipeInfo;

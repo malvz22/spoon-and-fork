@@ -2,8 +2,8 @@ import Button from "@/components/Button";
 import Hero from "@/components/Hero";
 import RecipeCard from "@/components/RecipeCard";
 import {
-  GetMultipleRecipes,
-  GetRecipeResponse,
+  getMultipleRecipes,
+  getRecipeResponse,
   ratingConversion,
 } from "@/lib/api";
 import { Recipe } from "@/types/recipe";
@@ -11,14 +11,19 @@ import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa";
 
 const Home = async () => {
-  const recipe = await GetRecipeResponse();
+  // const recipe = await GetRecipeResponse();
+
+  const recipe = await getRecipeResponse(
+    "recipes/complexSearch",
+    "&sort=meta-score"
+  );
 
   const recipeIdArray = recipe.map(({ id }: { id: number }) => id);
 
   // const data = await GetRecipeInfo({ recipeId: 716429 });
   // console.log(data);
 
-  const recipeInfo = await GetMultipleRecipes(recipeIdArray);
+  const recipeInfo = await getMultipleRecipes(recipeIdArray);
 
   return (
     <>
