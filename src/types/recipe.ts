@@ -7,3 +7,7 @@ export interface Recipe {
   spoonacularScore: number;
   creditsText: string;
 }
+
+export interface ApiProps {
+  api: Recipe[];
+}
