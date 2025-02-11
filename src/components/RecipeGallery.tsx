@@ -49,10 +49,6 @@ const RecipeGallery = () => {
     setSelected(category);
   };
 
-  console.log(selected);
-
-  console.log(recipes);
-
   //   const filteredRecipe = category
   //     .filter((cat) => cat === selected)
   //     .sort((a, b) => a.localeCompare(b));

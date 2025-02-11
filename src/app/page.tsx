@@ -1,15 +1,8 @@
 import Button from "@/components/Button";
 import Hero from "@/components/Hero";
-import RecipeCard from "@/components/RecipeCard";
 import RecipeGallery from "@/components/RecipeGallery";
 import RecipeList from "@/components/RecipeList";
-import {
-  getMultipleRecipes,
-  getRecipeResponse,
-  ratingConversion,
-} from "@/lib/api";
-import { Recipe } from "@/types/recipe";
-import Link from "next/link";
+import { getMultipleRecipes, getRecipeResponse } from "@/lib/api";
 import { FaArrowRight } from "react-icons/fa";
 
 const Home = async () => {

@@ -6,6 +6,7 @@ export interface Recipe {
   readyInMinutes: number;
   spoonacularScore: number;
   creditsText: string;
+  sourceName: string;
 }
 
 export interface ApiProps {

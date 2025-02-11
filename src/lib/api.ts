@@ -24,7 +24,7 @@ export const getRecipeResponse = async (resource: string, query: string) => {
 export const getRecipeInfo = async (recipeId: number): Promise<Recipe> => {
   if (!recipeId) throw new Error("Invalid recipe ID");
 
-  const url = `${process.env.NEXT_PUBLIC_API_BASE_URL}/recipes/${recipeId}/information?apiKey=${process.env.NEXT_PUBLIC_API_KEY}`;
+  const url = `${process.env.NEXT_PUBLIC_API_BASE_URL}/recipes/${recipeId}/information?apiKey=${process.env.NEXT_PUBLIC_API_KEY}&includeNutrition=true`;
 
   const response = await fetch(url);
 
