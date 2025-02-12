@@ -1,4 +1,4 @@
-import { Recipe } from "@/types/recipe";
+import { DetailedRecipe, Recipe } from "@/types/recipe";
 
 export const ratingConversion = (rating: number) => {
   const convertedRating: number = Number(((rating / 100) * 5).toFixed(2));
@@ -33,6 +33,24 @@ export const getRecipeInfo = async (recipeId: number): Promise<Recipe> => {
   }
 
   const recipeData: Recipe = await response.json();
+
+  return recipeData;
+};
+
+export const getDetailedRecipe = async (
+  recipeId: number
+): Promise<DetailedRecipe> => {
+  if (!recipeId) throw new Error("Invalid recipe ID");
+
+  const url = `${process.env.NEXT_PUBLIC_API_BASE_URL}/recipes/${recipeId}/information?apiKey=${process.env.NEXT_PUBLIC_API_KEY}&includeNutrition=true`;
+
+  const response = await fetch(url);
+
+  if (!response.ok) {
+    throw new Error(`Failed to fetch data: ${response.statusText}`);
+  }
+
+  const recipeData: DetailedRecipe = await response.json();
 
   return recipeData;
 };

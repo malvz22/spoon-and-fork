@@ -10,7 +10,7 @@ const RecipeCard = ({
   readyInMinutes,
   servings,
   spoonacularScore,
-  creditsText,
+  sourceName,
 }: Recipe) => {
   return (
     <div className="group flex flex-col w-full gap-2">
@@ -38,7 +38,7 @@ const RecipeCard = ({
           <p>{spoonacularScore}</p>
         </div>
       </div>
-      <div className="flex flex-row">{creditsText}</div>
+      <div className="flex flex-row">{sourceName}</div>
     </div>
   );
 };
