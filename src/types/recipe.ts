@@ -9,6 +9,7 @@ export interface Recipe {
 }
 
 export interface DetailedRecipe extends Recipe {
+  occasions: string[];
   extendedIngredients: {
     original: string;
   }[];

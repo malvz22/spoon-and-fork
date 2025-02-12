@@ -1,5 +1,6 @@
 import {
   getDetailedRecipe,
+  getRandomRecipe,
   getRecipeResponse,
   ratingConversion,
 } from "@/lib/api";
@@ -37,13 +38,13 @@ const Page = async ({ params }: { params: Promise<{ id: number }> }) => {
   const id = (await params).id;
 
   const recipeData = await getDetailedRecipe(id);
-
+  const randomRecipeData = await getRandomRecipe();
   const popularRecipeData = await getRecipeResponse(
     `recipes/complexSearch`,
     `&sort=meta-score&number=5&addRecipeInformation=true`
   );
 
-  console.log(popularRecipeData);
+  console.log(randomRecipeData);
 
   return (
     <div className="w-full flex flex-col max-w-[1240px] mx-auto px-4 lg:px-16 py-8 lg:py-10 gap-4">
@@ -57,7 +58,6 @@ const Page = async ({ params }: { params: Promise<{ id: number }> }) => {
           <p>{ratingConversion(recipeData.spoonacularScore)}</p>
         </div>
       </div>
-
       <hr className="border-[#E8E8E8] border-solid border-[1px] my-1" />
       <div className="w-full max-w-full aspect-video relative rounded-[14px] overflow-hidden">
         <Image
@@ -131,7 +131,7 @@ const Page = async ({ params }: { params: Promise<{ id: number }> }) => {
                 return (
                   <Link key={recipeData.id} href={`/recipe/${recipeData.id}`}>
                     <div className="flex flex-row justify-start items-center gap-3">
-                      <div className="relative w-full max-w-[120px] aspect-[13/10] rounded-sm overflow-hidden">
+                      <div className="relative w-full max-w-[110px] aspect-[13/10] rounded-sm overflow-hidden">
                         <Image src={recipeData.image} alt="food" fill />
                       </div>
                       <h3 className="text-md font-bold">{recipeData.title}</h3>
@@ -141,6 +141,28 @@ const Page = async ({ params }: { params: Promise<{ id: number }> }) => {
               })}
             </div>
           </div>
+        </div>
+      </div>
+      <div className="flex flex-col w-full max-w-full gap-4">
+        <h2 className="text-3xl font-bold mb-4">You might also like</h2>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {randomRecipeData.map((recipeData) => {
+            return (
+              <Link key={recipeData.id} href={`/recipe/${recipeData.id}`}>
+                <div className="flex flex-col gap-3">
+                  <div className="relative w-full max-w-full aspect-[4/3] rounded-md overflow-hidden">
+                    <Image
+                      src={recipeData.image}
+                      fill
+                      alt="food"
+                      style={{ objectFit: "cover" }}
+                    />
+                  </div>
+                  <p className="font-bold">{recipeData.title}</p>
+                </div>
+              </Link>
+            );
+          })}
         </div>
       </div>
     </div>

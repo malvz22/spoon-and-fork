@@ -21,6 +21,19 @@ export const getRecipeResponse = async (resource: string, query: string) => {
   return recipes;
 };
 
+export const getRandomRecipe = async (): Promise<Recipe[]> => {
+  const url = `${process.env.NEXT_PUBLIC_API_BASE_URL}/recipes/random?apiKey=${process.env.NEXT_PUBLIC_API_KEY}&number=8`;
+  const response = await fetch(url);
+
+  if (!response.ok) {
+    throw new Error(`Failed to fetch data: ${response.statusText}`);
+  }
+
+  const recipeData = await response.json();
+
+  return recipeData.recipes;
+};
+
 export const getRecipeInfo = async (recipeId: number): Promise<Recipe> => {
   if (!recipeId) throw new Error("Invalid recipe ID");
 
@@ -51,6 +64,22 @@ export const getDetailedRecipe = async (
   }
 
   const recipeData: DetailedRecipe = await response.json();
+
+  return recipeData;
+};
+
+export const getSimilarRecipe = async (recipeId: number): Promise<Recipe[]> => {
+  if (!recipeId) throw new Error("Invalid recipe ID");
+
+  const url = `${process.env.NEXT_PUBLIC_API_BASE_URL}/recipes/${recipeId}/similar?apiKey=${process.env.NEXT_PUBLIC_API_KEY}`;
+
+  const response = await fetch(url);
+
+  if (!response.ok) {
+    throw new Error(`Failed to fetch data: ${response.statusText}`);
+  }
+
+  const recipeData: Recipe[] = await response.json();
 
   return recipeData;
 };
