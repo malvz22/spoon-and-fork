@@ -16,7 +16,7 @@ const RecipeList: React.FC<ApiProps> = async ({ api }) => {
               servings={recipe.servings}
               readyInMinutes={recipe.readyInMinutes}
               spoonacularScore={ratingConversion(recipe.spoonacularScore)}
-              creditsText={recipe.creditsText}
+              sourceName={recipe.sourceName}
             />
           </Link>
         );
