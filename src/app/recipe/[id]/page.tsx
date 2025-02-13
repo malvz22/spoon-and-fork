@@ -44,8 +44,6 @@ const Page = async ({ params }: { params: Promise<{ id: number }> }) => {
     `&sort=meta-score&number=5&addRecipeInformation=true`
   );
 
-  console.log(randomRecipeData);
-
   return (
     <div className="w-full flex flex-col max-w-[1240px] mx-auto px-4 lg:px-16 py-8 lg:py-10 gap-4">
       <h1 className="text-4xl lg:text-5xl font-bold">{recipeData.title}</h1>
@@ -132,7 +130,13 @@ const Page = async ({ params }: { params: Promise<{ id: number }> }) => {
                   <Link key={recipeData.id} href={`/recipe/${recipeData.id}`}>
                     <div className="flex flex-row justify-start items-center gap-3">
                       <div className="relative w-full max-w-[110px] aspect-[13/10] rounded-sm overflow-hidden">
-                        <Image src={recipeData.image} alt="food" fill />
+                        <Image
+                          src={recipeData.image}
+                          alt="food"
+                          fill
+                          style={{ objectFit: "cover" }}
+                          sizes="100%"
+                        />
                       </div>
                       <h3 className="text-md font-bold">{recipeData.title}</h3>
                     </div>
@@ -156,6 +160,7 @@ const Page = async ({ params }: { params: Promise<{ id: number }> }) => {
                       fill
                       alt="food"
                       style={{ objectFit: "cover" }}
+                      sizes="100%"
                     />
                   </div>
                   <p className="font-bold">{recipeData.title}</p>

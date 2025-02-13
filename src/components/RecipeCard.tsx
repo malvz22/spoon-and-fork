@@ -21,6 +21,7 @@ const RecipeCard = ({
           fill
           style={{ objectFit: "cover" }}
           className="transform transition duration-500 ease-in-out group-hover:scale-110"
+          sizes="100%"
         />
       </div>
       <p className="text-2xl">{title}</p>
