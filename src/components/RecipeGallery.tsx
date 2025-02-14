@@ -26,7 +26,6 @@ const category = [
 const RecipeGallery = () => {
   const [recipes, setRecipes] = useState<Recipe[]>([]);
   const [selected, setSelected] = useState<string>("main course");
-  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     async function fetchData() {
@@ -38,8 +37,6 @@ const RecipeGallery = () => {
         setRecipes(response);
       } catch (error) {
         console.error("Error fetching data: ", error);
-      } finally {
-        setLoading(false);
       }
     }
     fetchData();
@@ -49,13 +46,9 @@ const RecipeGallery = () => {
     setSelected(category);
   };
 
-  //   const filteredRecipe = category
-  //     .filter((cat) => cat === selected)
-  //     .sort((a, b) => a.localeCompare(b));
-
   return (
     <div className="flex flex-col gap-10 w-full max-w-full">
-      <div className="flex flex-row gap-3 overflow-x-scroll scrollbar-hide w-full max-w-full">
+      <div className="flex flex-row flex-nowrap gap-3 overflow-x-scroll scrollbar-hide w-full max-w-full">
         {category.map((cat: string, index) => {
           return (
             <button

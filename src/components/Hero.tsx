@@ -1,3 +1,5 @@
+import SearchBar from "./SearchBar";
+
 const Hero = () => {
   return (
     <>
@@ -13,15 +15,7 @@ const Hero = () => {
                 delicious for every palate.
               </p>
             </div>
-            <div className="flex flex-row gap-4 w-full max-w-full justify-center items-center">
-              <input
-                className="px-5 py-3 rounded-lg w-full max-w-[1024px]"
-                placeholder="search a recipe here"
-              />
-              <button className="bg-[#F15025] px-6 py-3 md:px-10 md:py-3 rounded-lg">
-                Search
-              </button>
-            </div>
+            <SearchBar />
           </div>
         </div>
       </section>
