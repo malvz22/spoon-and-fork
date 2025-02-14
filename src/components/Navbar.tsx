@@ -30,7 +30,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="sticky top-0 z-50 w-full max-w-full flex flex-col bg-white px-4 lg:px-16">
+    <header className="sticky top-0 z-50 w-full max-w-full flex flex-col bg-white px-4 lg:px-16">
       <div className="flex flex-row w-full max-w-[1240px] justify-between mx-auto py-6 lg:py-8">
         <Link href={"/"}>
           <h1 className="font-bold text-[18px] text-[#F15025]">Spoon & Fork</h1>
@@ -38,15 +38,15 @@ const Navbar = () => {
 
         {/* Desktop Layout */}
 
-        <div className="hidden lg:flex flex-row gap-6">
+        <nav className="hidden lg:flex flex-row gap-6">
           <Link href={"/"}>
             <button className="hover:text-[#F15025] transition-all duration-700">
               Home
             </button>
           </Link>
-          <Link href={"/recipes"}>
+          <Link href={"/categories"}>
             <button className="hover:text-[#F15025] transition-all duration-700">
-              Recipes
+              Categories
             </button>
           </Link>
           <Link href={"/meal-planner"}>
@@ -64,7 +64,7 @@ const Navbar = () => {
               Contact
             </button>
           </Link>
-        </div>
+        </nav>
 
         {/* Mobile Layout */}
 
@@ -75,7 +75,7 @@ const Navbar = () => {
           <RxHamburgerMenu />
         </button>
       </div>
-      <div
+      <nav
         className={`${
           openMenu ? "flex flex-col lg:hidden text-center" : "hidden"
         }`}
@@ -85,9 +85,9 @@ const Navbar = () => {
             Home
           </button>
         </Link>
-        <Link href={"/recipes"}>
+        <Link href={"/categories"}>
           <button className="hover:text-[#F15025] transition-all duration-700 py-2">
-            Recipes
+            Categories
           </button>
         </Link>
         <Link href={"/meal-planner"}>
@@ -105,8 +105,8 @@ const Navbar = () => {
             Contact
           </button>
         </Link>
-      </div>
-    </nav>
+      </nav>
+    </header>
   );
 };
 
