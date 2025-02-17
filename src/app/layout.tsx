@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -22,7 +23,7 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   title: "Recipe Finder & Meal Planner | Easy & Healthy Meals",
   description:
-    "Your ultimate cooking companion! Browse a huge collection of recipes, plan your weekly meals, and save time in the kitchen with our smart meal planner",
+    "Spoon & Fork: Your destination for mouthwatering recipes, cooking tips, and culinary inspiration. We make home cooking fun, easy, and accessible for food lovers of every skill level.",
 };
 
 export default function RootLayout({
@@ -35,6 +36,7 @@ export default function RootLayout({
       <body className={`${dmSans.className} antialiased`}>
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
