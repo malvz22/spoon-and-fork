@@ -27,7 +27,7 @@ const RecipeCard = ({
       <p className="text-2xl truncate font-medium group-hover:text-[#F15025] transition-colors duration-700">
         {title}
       </p>
-      <div className="flex flex-row text-[#737373] justify-between md:justify-normal md:gap-4">
+      <div className="flex flex-row text-[#737373] font-medium justify-between md:justify-normal md:gap-4">
         <div className="flex flex-row items-center gap-2">
           <PiTimerFill size={24} />
           <p>{readyInMinutes} Mins</p>

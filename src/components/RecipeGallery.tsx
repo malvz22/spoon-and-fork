@@ -5,6 +5,8 @@ import { getRecipeResponse, ratingConversion } from "@/lib/api";
 import { Recipe } from "@/types/recipe";
 import Link from "next/link";
 import RecipeCard from "./RecipeCard";
+import Button from "./Button";
+import { FaArrowRight } from "react-icons/fa";
 
 const category = [
   "main course",
@@ -14,13 +16,6 @@ const category = [
   "appetizer",
   "salad",
   "bread",
-  "soup",
-  "beverage",
-  "sauce",
-  "marinade",
-  "fingerfood",
-  "snack",
-  "drink",
 ];
 
 const RecipeGallery = () => {
@@ -48,11 +43,11 @@ const RecipeGallery = () => {
 
   return (
     <div className="flex flex-col gap-10 w-full max-w-full">
-      <div className="flex flex-row flex-nowrap gap-3 overflow-x-scroll scrollbar-hide w-full max-w-full">
+      <div className="flex flex-row flex-nowrap whitespace-nowrap gap-3 overflow-x-scroll lg:justify-between lg:gap-0 scrollbar-hide w-full max-w-full">
         {category.map((cat: string, index) => {
           return (
             <button
-              className={`text-black border-solid border-[1px] border-[#CCCCCC] px-6 py-3 rounded-[12px] justify-center flex flex-row gap-3 items-center hover:bg-[#F15025] hover:text-white hover:border-[#F15025] transition-all duration-500 ${
+              className={`text-black border-solid border-[1px] border-[#CCCCCC] px-6 py-3 rounded-[12px] justify-center flex flex-row gap-3 items-center hover:bg-[#F15025] hover:text-white hover:border-[#F15025] transition-all capitalize duration-500 ${
                 selected === cat
                   ? "bg-[#F15025] text-white border-[#F15025]"
                   : "border-[#cccccc] text-black"
@@ -60,10 +55,13 @@ const RecipeGallery = () => {
               key={index}
               onClick={() => filterRecipe(cat)}
             >
-              {cat.toUpperCase()}
+              {cat}
             </button>
           );
         })}
+        <Button>
+          View All Categories <FaArrowRight />
+        </Button>
       </div>
       <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
         {recipes.map((recipe: Recipe) => {
