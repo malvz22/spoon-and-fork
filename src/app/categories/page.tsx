@@ -68,7 +68,7 @@ const Page = () => {
       <div className="w-full max-w-full grid grid-cols-2 md:grid-cold-3 lg:grid-cols-4 mx-auto gap-5">
         {category.map((cat, index) => {
           return (
-            <Link key={index} href={`/categories/${cat.name}`}>
+            <Link key={index} href={`/categories/${decodeURI(cat.name)}`}>
               <div className="flex flex-col justify-center items-center w-full max-w-full gap-4">
                 <div className="relative w-full max-w-full aspect-[1/1] rounded-full overflow-hidden">
                   <Image
