@@ -8,7 +8,7 @@ const Footer = () => {
     <footer className="w-full max-w-full mx-auto flex flex-col bg-white">
       <div className="w-full max-w-[1240px] flex flex-col-reverse lg:flex-row px-4 lg:px-16 mx-auto justify-between py-16 lg:py-40">
         <div className="flex flex-col w-full max-w-[400px]">
-          <h1 className="font-bold text-[24px] text-[#F15025] mb-6">
+          <h1 className="website-name font-bold text-[24px] text-[#F15025] mb-6">
             Spoon & Fork
           </h1>
           <p className="mb-10">

@@ -8,7 +8,6 @@ const Page = async ({ params }: { params: Promise<{ keyword: string }> }) => {
     `recipes/complexSearch`,
     `&query=${decodedKeyword}&addRecipeInformation=true`
   );
-  console.log(searchResults);
   return (
     <main className="custom-container ">
       <h1 className="text-2xl">

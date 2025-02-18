@@ -31,9 +31,11 @@ const Navbar = () => {
 
   return (
     <header className="sticky top-0 z-50 w-full max-w-full flex flex-col bg-white px-4 lg:px-16">
-      <div className="flex flex-row w-full max-w-[1240px] justify-between mx-auto py-6 lg:py-8">
+      <div className="flex flex-row w-full max-w-[1240px] justify-between items-center mx-auto py-6 lg:py-8">
         <Link href={"/"}>
-          <h1 className="font-bold text-[18px] text-[#F15025]">Spoon & Fork</h1>
+          <h1 className="website-name font-bold text-[24px] text-[#F15025]">
+            Spoon & Fork
+          </h1>
         </Link>
 
         {/* Desktop Layout */}
