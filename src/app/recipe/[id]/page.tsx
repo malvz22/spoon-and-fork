@@ -9,6 +9,7 @@ import Link from "next/link";
 import { FaStar } from "react-icons/fa";
 import { MdPeople } from "react-icons/md";
 import { PiTimerFill } from "react-icons/pi";
+import parse from "html-react-parser";
 
 const Page = async ({ params }: { params: Promise<{ id: number }> }) => {
   const excludeNutrients = [
@@ -44,6 +45,8 @@ const Page = async ({ params }: { params: Promise<{ id: number }> }) => {
     `&sort=meta-score&number=5&addRecipeInformation=true`
   );
 
+  console.log(recipeData);
+
   return (
     <div className="w-full flex flex-col max-w-[1240px] mx-auto px-4 lg:px-16 py-8 lg:py-10 gap-4">
       <h1 className="text-4xl lg:text-5xl font-bold">{recipeData.title}</h1>
@@ -57,6 +60,7 @@ const Page = async ({ params }: { params: Promise<{ id: number }> }) => {
         </div>
       </div>
       <hr className="border-[#E8E8E8] border-solid border-[1px] my-1" />
+      <article>{parse(recipeData.summary)}</article>
       <div className="w-full max-w-full aspect-video relative rounded-[14px] overflow-hidden">
         <Image
           src={recipeData.image}
