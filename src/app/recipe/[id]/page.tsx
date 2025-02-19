@@ -96,7 +96,7 @@ const Page = async ({ params }: { params: Promise<{ id: number }> }) => {
                 <span className="w-6 h-6 aspect-[1/1] flex justify-center items-center bg-[#F15025] rounded-full text-white">
                   {step.number}
                 </span>
-                <p className="ps-3 md:px-7 text-start w-full max-w-[800px]">
+                <p className="ps-3 md:px-7 text-start w-full max-w-[800px] leading-[24px]">
                   {step.step}
                 </p>
               </div>

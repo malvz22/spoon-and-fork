@@ -11,7 +11,7 @@ const Page = async ({ params }: { params: Promise<{ keyword: string }> }) => {
   return (
     <main className="custom-container ">
       <h1 className="text-2xl">
-        Search Results for <strong>{decodedKeyword}</strong> (
+        Search Results for <strong>&quot;{decodedKeyword}&quot;</strong> (
         {searchResults.length} Recipes)
       </h1>
       <RecipeList api={searchResults} />
