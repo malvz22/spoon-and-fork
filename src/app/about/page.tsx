@@ -1,6 +1,9 @@
+import { getRandomUserData } from "@/lib/api";
 import Image from "next/image";
 
-const Page = () => {
+const Page = async () => {
+  const randomUser = await getRandomUserData();
+
   return (
     <main className="custom-container">
       <h1 className="text-4xl font-bold">About</h1>
@@ -58,11 +61,39 @@ const Page = () => {
           />
         </div>
       </article>
-      {/* <article className="flex flex-col gap-6">
+      <article className="flex flex-col gap-6">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">
           Meet Our Team
         </h1>
-      </article> */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
+          {randomUser.map((member, index) => {
+            return (
+              <div
+                key={index}
+                className="flex flex-col w-full max-w-full justify-center items-center gap-4"
+              >
+                <div className="relative w-full max-w-full aspect-[1/1] rounded-full overflow-hidden">
+                  <Image
+                    src={member.picture.large}
+                    alt="member pic"
+                    fill
+                    style={{ objectFit: "cover" }}
+                    sizes="100%"
+                  />
+                </div>
+                <div className="flex flex-col gap-1 justify-center items-center">
+                  <p className="font-bold">
+                    {member.name.first} {member.name.last}
+                  </p>
+                  <p className="text-[12px] text-[#7F7F7F]">
+                    Chef Extraordinaire
+                  </p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </article>
     </main>
   );
 };

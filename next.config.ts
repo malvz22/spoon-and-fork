@@ -6,6 +6,9 @@ const nextConfig: NextConfig = {
       {
         hostname: "img.spoonacular.com",
       },
+      {
+        hostname: "randomuser.me",
+      },
     ],
   },
 };

@@ -37,8 +37,8 @@ const RecipeCard = ({
           <p>{servings} Servings</p>
         </div>
         <div className="flex flex-row justify-center items-center gap-2">
-          <FaStar color="#F15025" />
-          <p>{spoonacularScore}</p>
+          <FaStar size={20} color="#F15025" />
+          <p className="">{spoonacularScore}</p>
         </div>
       </div>
       <div className="flex flex-row">{sourceName}</div>

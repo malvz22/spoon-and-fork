@@ -6,7 +6,7 @@ const Page = async ({ params }: { params: Promise<{ category: string }> }) => {
   const decodedCategory = decodeURI(category);
   const searchResults = await getRecipeResponse(
     `recipes/complexSearch`,
-    `&type=${decodedCategory}&addRecipeInformation=true`
+    `&type=${decodedCategory}&addRecipeInformation=true&sort=meta-score&number=15`
   );
   return (
     <main className="custom-container ">

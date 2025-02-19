@@ -1,7 +1,8 @@
+import { Member } from "@/types/member";
 import { DetailedRecipe, Recipe } from "@/types/recipe";
 
 export const ratingConversion = (rating: number) => {
-  const convertedRating: number = Number(((rating / 100) * 5).toFixed(2));
+  const convertedRating: number = Number(((rating / 100) * 5).toFixed(1));
   return convertedRating;
 };
 
@@ -98,4 +99,11 @@ export const getMultipleRecipes = async (
   );
 
   return recipeInfo;
+};
+
+export const getRandomUserData = async (): Promise<Member[]> => {
+  const url = `https://randomuser.me/api/?results=8&inc=name,picture&nat=us&seed=f98f6806b42d999c`;
+  const response = await fetch(url);
+  const data = await response.json();
+  return data.results;
 };
