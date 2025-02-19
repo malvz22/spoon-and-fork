@@ -69,7 +69,7 @@ const Page = () => {
         {category.map((cat, index) => {
           return (
             <Link key={index} href={`/categories/${decodeURI(cat.name)}`}>
-              <div className="flex flex-col justify-center items-center w-full max-w-full gap-4">
+              <div className="flex group flex-col justify-center items-center w-full max-w-full gap-4">
                 <div className="relative w-full max-w-full aspect-[1/1] rounded-full overflow-hidden">
                   <Image
                     src={cat.image}
@@ -78,9 +78,12 @@ const Page = () => {
                     style={{ objectFit: "cover" }}
                     sizes="100%"
                     priority
+                    className="transform transition duration-500 ease-in-out group-hover:scale-110"
                   />
                 </div>
-                <h1 className="text-2xl capitalize">{cat.name}</h1>
+                <h1 className="text-2xl capitalize group-hover:text-[#F15025] transition-colors duration-700">
+                  {cat.name}
+                </h1>
               </div>
             </Link>
           );

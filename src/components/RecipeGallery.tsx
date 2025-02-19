@@ -59,9 +59,11 @@ const RecipeGallery = () => {
             </button>
           );
         })}
-        <Button>
-          View All Categories <FaArrowRight />
-        </Button>
+        <Link href={"/categories"}>
+          <Button>
+            View All Categories <FaArrowRight />
+          </Button>
+        </Link>
       </div>
       <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
         {recipes.map((recipe: Recipe) => {

@@ -19,6 +19,7 @@ const Page = async () => {
             fill
             style={{ objectFit: "cover" }}
             sizes="100%"
+            priority
           />
         </div>
         <p className="text-lg md:text-xl lg:text-2xl">
