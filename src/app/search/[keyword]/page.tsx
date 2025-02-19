@@ -6,7 +6,7 @@ const Page = async ({ params }: { params: Promise<{ keyword: string }> }) => {
   const decodedKeyword = decodeURI(keyword);
   const searchResults = await getRecipeResponse(
     `recipes/complexSearch`,
-    `&query=${decodedKeyword}&addRecipeInformation=true`
+    `&query=${decodedKeyword}&addRecipeInformation=true&number=15&sort=meta-score`
   );
   return (
     <main className="custom-container ">
