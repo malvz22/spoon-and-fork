@@ -2,23 +2,14 @@ import Button from "@/components/Button";
 import Hero from "@/components/Hero";
 import RecipeGallery from "@/components/RecipeGallery";
 import RecipeList from "@/components/RecipeList";
-import { getMultipleRecipes, getRecipeResponse } from "@/lib/api";
+import { getRecipeResponse } from "@/lib/api";
 import { FaArrowRight } from "react-icons/fa";
 
 const Home = async () => {
-  // const recipe = await GetRecipeResponse();
-
   const recipe = await getRecipeResponse(
     "recipes/complexSearch",
-    "&sort=meta-score&number=15"
+    "&sort=meta-score&number=15&addRecipeInformation=true"
   );
-
-  const recipeIdArray = recipe.map(({ id }: { id: number }) => id);
-
-  // const data = await GetRecipeInfo({ recipeId: 716429 });
-  // console.log(data);
-
-  const recipeInfo = await getMultipleRecipes(recipeIdArray);
 
   return (
     <>
@@ -38,7 +29,7 @@ const Home = async () => {
             </Button>
           </div>
         </div>
-        <RecipeList api={recipeInfo} />
+        <RecipeList api={recipe} />
         <div className="lg:hidden flex mx-auto">
           <Button>
             View All Trending Recipes <FaArrowRight />
