@@ -52,13 +52,20 @@ const Footer = () => {
         <div className="flex flex-col lg:flex-row w-full max-w-full gap-8 mb-10 lg:gap-16 justify-start lg:justify-end">
           <ul className="flex flex-col gap-6">
             <li className="font-bold">Recipes</li>
-            <li>All Recipes</li>
-            <li>By Category</li>
-            <li>Collections</li>
+            <Link href={"/"}>
+              <li>All Recipes</li>
+            </Link>
+            <Link href={"/categories"}>
+              <li>By Category</li>
+            </Link>
+
+            <li>Trending</li>
           </ul>
           <ul className="flex flex-col gap-6">
             <li className="font-bold">About</li>
-            <li>About Spoon & Fork</li>
+            <Link href={"/about"}>
+              <li>About Spoon & Fork</li>
+            </Link>
           </ul>
           <ul className="flex flex-col gap-6">
             <li className="font-bold">Help</li>
