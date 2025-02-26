@@ -3,14 +3,23 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
+import Modal from "./Modal";
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
 
   const handleMenu = () => {
     setOpenMenu(!openMenu);
   };
 
+  const handleOpenModal = () => {
+    setModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setModalOpen(false);
+  };
   //   Function to set the setOpenMenu to false if screen size large
 
   useEffect(() => {
@@ -68,6 +77,10 @@ const Navbar = () => {
           </Link>
         </nav>
 
+        <p className="text-[#f15025] hidden lg:flex" onClick={handleOpenModal}>
+          Login
+        </p>
+
         {/* Mobile Layout */}
 
         <button
@@ -108,6 +121,10 @@ const Navbar = () => {
           </button>
         </Link>
       </nav>
+
+      <Modal isOpen={modalOpen} onClose={handleCloseModal}>
+        <p>Login Form</p>
+      </Modal>
     </header>
   );
 };
