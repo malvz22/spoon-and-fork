@@ -5,3 +5,7 @@ export interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
 }
+
+export interface Switch {
+  onSwitch: () => void;
+}

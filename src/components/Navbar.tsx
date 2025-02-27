@@ -4,10 +4,13 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import Modal from "./Modal";
+import LoginFormModalContent from "./LoginFormModalContent";
+import SignUpFormModalContent from "./SignUpFormModalContent";
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
+  const [modal, setModal] = useState(true);
 
   const handleMenu = () => {
     setOpenMenu(!openMenu);
@@ -15,11 +18,18 @@ const Navbar = () => {
 
   const handleOpenModal = () => {
     setModalOpen(true);
+    //default: login modal
+    setModal(true);
   };
 
   const handleCloseModal = () => {
     setModalOpen(false);
   };
+
+  const switchToRegister = () => setModal(false);
+
+  const switchToLogin = () => setModal(true);
+
   //   Function to set the setOpenMenu to false if screen size large
 
   useEffect(() => {
@@ -49,7 +59,7 @@ const Navbar = () => {
 
         {/* Desktop Layout */}
 
-        <nav className="hidden lg:flex flex-row gap-6">
+        <nav className="hidden lg:flex flex-row gap-6 text-black">
           <Link href={"/"}>
             <button className="hover:text-[#F15025] transition-all duration-700">
               Home
@@ -77,7 +87,10 @@ const Navbar = () => {
           </Link>
         </nav>
 
-        <p className="text-[#f15025] hidden lg:flex" onClick={handleOpenModal}>
+        <p
+          className="text-[#f15025] hidden lg:flex cursor-pointer"
+          onClick={handleOpenModal}
+        >
           Login
         </p>
 
@@ -123,7 +136,11 @@ const Navbar = () => {
       </nav>
 
       <Modal isOpen={modalOpen} onClose={handleCloseModal}>
-        <p>Login Form</p>
+        {modal ? (
+          <LoginFormModalContent onSwitch={switchToRegister} />
+        ) : (
+          <SignUpFormModalContent onSwitch={switchToLogin} />
+        )}
       </Modal>
     </header>
   );
