@@ -137,9 +137,15 @@ const Navbar = () => {
 
       <Modal isOpen={modalOpen} onClose={handleCloseModal}>
         {modal ? (
-          <LoginFormModalContent onSwitch={switchToRegister} />
+          <LoginFormModalContent
+            onSwitch={switchToRegister}
+            onClose={handleCloseModal}
+          />
         ) : (
-          <SignUpFormModalContent onSwitch={switchToLogin} />
+          <SignUpFormModalContent
+            onSwitch={switchToLogin}
+            onClose={handleCloseModal}
+          />
         )}
       </Modal>
     </header>

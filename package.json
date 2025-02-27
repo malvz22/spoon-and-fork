@@ -10,12 +10,14 @@
   },
   "dependencies": {
     "dompurify": "^3.2.4",
+    "formik": "^2.4.6",
     "html-react-parser": "^5.2.2",
     "next": "15.1.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-icons": "^5.4.0",
-    "tailwind-scrollbar-hide": "^2.0.0"
+    "tailwind-scrollbar-hide": "^2.0.0",
+    "yup": "^1.6.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

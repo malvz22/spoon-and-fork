@@ -6,9 +6,10 @@ import ReactDOM from "react-dom";
 import { IoClose } from "react-icons/io5";
 
 const Modal: React.FC<ModalProps> = ({ children, isOpen, onClose }) => {
-  const modalRoot = document.getElementById("modal-root");
-
+  
+const modalRoot = document.getElementById("modal-root");
   useEffect(() => {
+    
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
     };
