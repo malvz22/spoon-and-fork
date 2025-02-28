@@ -10,6 +10,7 @@ const initialValues: SignUpFormValues = {
   email: "",
   password: "",
   confirmPassword: "",
+  profilePic: "",
 };
 
 const validationSchema = Yup.object({
@@ -40,15 +41,17 @@ const SignUpFormModalContent: React.FC<Switch> = ({ onSwitch, onClose }) => {
       username: values.username,
       email: values.email,
       password: values.password,
+      profilePic: "Images/default-avatar.jpg",
     };
 
     //save user data to Local Storage
 
-    console.log(userData);
+    localStorage.setItem("user", JSON.stringify(userData));
 
     //redirect to Home Page
-    onClose();
+
     router.push("/");
+    onClose();
     actions.setSubmitting(false);
   };
 

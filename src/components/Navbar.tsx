@@ -6,11 +6,21 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import Modal from "./Modal";
 import LoginFormModalContent from "./LoginFormModalContent";
 import SignUpFormModalContent from "./SignUpFormModalContent";
+import { useAuth } from "@/context/AuthContext";
+import { useRouter } from "next/navigation";
 
 const Navbar = () => {
+  const { user, setUser } = useAuth();
+  const router = useRouter();
+
   const [openMenu, setOpenMenu] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
   const [modal, setModal] = useState(true);
+
+  const handleLogout = () => {
+    setUser(null);
+    router.push("/");
+  };
 
   const handleMenu = () => {
     setOpenMenu(!openMenu);
@@ -86,13 +96,23 @@ const Navbar = () => {
             </button>
           </Link>
         </nav>
-
-        <p
-          className="text-[#f15025] hidden lg:flex cursor-pointer"
-          onClick={handleOpenModal}
-        >
-          Login
-        </p>
+        <nav>
+          {user ? (
+            <div className="flex flex-row gap-3 cursor-pointer">
+              <p>{user.username}</p>
+              <p onClick={handleLogout}>Logout</p>
+            </div>
+          ) : (
+            <div>
+              <p
+                className="text-[#f15025] hidden lg:flex cursor-pointer"
+                onClick={handleOpenModal}
+              >
+                Login
+              </p>
+            </div>
+          )}
+        </nav>
 
         {/* Mobile Layout */}
 

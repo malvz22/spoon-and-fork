@@ -11,6 +11,7 @@ export interface SignUpFormValues {
   email: string;
   password: string;
   confirmPassword: string;
+  profilePic: string;
 }
 
 export interface LoginFormValues {
@@ -20,4 +21,5 @@ export interface LoginFormValues {
 
 export interface Switch {
   onSwitch: () => void;
+  onClose: () => void;
 }

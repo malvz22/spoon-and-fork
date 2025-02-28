@@ -1,15 +1,18 @@
 "use client";
 
 import { ModalProps } from "@/types/modal";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 import { IoClose } from "react-icons/io5";
 
 const Modal: React.FC<ModalProps> = ({ children, isOpen, onClose }) => {
-  
-const modalRoot = document.getElementById("modal-root");
+  const [modalRoot, setModalRoot] = useState<Element | null>(null);
+
   useEffect(() => {
-    
+    setModalRoot(document.getElementById("modal-root"));
+  }, []);
+
+  useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
     };
