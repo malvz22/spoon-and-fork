@@ -41,7 +41,7 @@ const SignUpFormModalContent: React.FC<Switch> = ({ onSwitch, onClose }) => {
       username: values.username,
       email: values.email,
       password: values.password,
-      profilePic: "Images/default-avatar.jpg",
+      profilePic: "/Images/user.png",
     };
 
     //save user data to Local Storage

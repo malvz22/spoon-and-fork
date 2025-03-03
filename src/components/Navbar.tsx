@@ -8,6 +8,7 @@ import LoginFormModalContent from "./LoginFormModalContent";
 import SignUpFormModalContent from "./SignUpFormModalContent";
 import { useAuth } from "@/context/AuthContext";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 const Navbar = () => {
   const { user, setUser } = useAuth();
@@ -80,11 +81,11 @@ const Navbar = () => {
               Categories
             </button>
           </Link>
-          <Link href={"/meal-planner"}>
+          {/* <Link href={"/meal-planner"}>
             <button className="hover:text-[#F15025] transition-all duration-700">
               Meal Planner
             </button>
-          </Link>
+          </Link> */}
           <Link href={"/about"}>
             <button className="hover:text-[#F15025] transition-all duration-700">
               About
@@ -98,8 +99,13 @@ const Navbar = () => {
         </nav>
         <nav>
           {user ? (
-            <div className="flex flex-row gap-3 cursor-pointer">
-              <p>{user.username}</p>
+            <div className="flex flex-row gap-3 cursor-pointer justify-center items-center">
+              <Image
+                src={user.profilePic}
+                alt="profile-pic"
+                width={32}
+                height={32}
+              />
               <p onClick={handleLogout}>Logout</p>
             </div>
           ) : (
@@ -138,11 +144,11 @@ const Navbar = () => {
             Categories
           </button>
         </Link>
-        <Link href={"/meal-planner"}>
+        {/* <Link href={"/meal-planner"}>
           <button className="hover:text-[#F15025] transition-all duration-700 py-2">
             Meal Planner
           </button>
-        </Link>
+        </Link> */}
         <Link href={"/about"}>
           <button className="hover:text-[#F15025] transition-all duration-700 py-2">
             About

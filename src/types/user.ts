@@ -4,6 +4,7 @@ export interface IUser {
   id: number;
   username: string;
   email: string;
+  profilePic: string;
 }
 
 export interface IAuthContext {

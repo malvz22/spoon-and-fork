@@ -15,7 +15,7 @@ const validationSchema = Yup.object({
   password: Yup.string().required("Password is required"),
 });
 
-const LoginFormModalContent: React.FC<Switch> = ({ onSwitch }) => {
+const LoginFormModalContent: React.FC<Switch> = ({ onSwitch, onClose }) => {
   const router = useRouter();
   const { setUser } = useAuth();
 
@@ -38,6 +38,7 @@ const LoginFormModalContent: React.FC<Switch> = ({ onSwitch }) => {
       values.password === user.password
     ) {
       setUser(user);
+      onClose();
       router.push("/");
     } else {
       alert("Invalid email or password");
