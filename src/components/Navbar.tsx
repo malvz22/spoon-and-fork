@@ -100,12 +100,15 @@ const Navbar = () => {
         <nav>
           {user ? (
             <div className="flex flex-row gap-3 cursor-pointer justify-center items-center">
-              <Image
-                src={user.profilePic}
-                alt="profile-pic"
-                width={32}
-                height={32}
-              />
+              <Link href={`/profile/${user.username}`}>
+                <Image
+                  src={user.profilePic}
+                  alt="profile-pic"
+                  width={32}
+                  height={32}
+                />
+              </Link>
+
               <p onClick={handleLogout}>Logout</p>
             </div>
           ) : (

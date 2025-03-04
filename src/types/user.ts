@@ -5,6 +5,12 @@ export interface IUser {
   username: string;
   email: string;
   profilePic: string;
+  password: string;
+}
+
+export interface ProfileForm {
+  username: string;
+  email: string;
 }
 
 export interface IAuthContext {
