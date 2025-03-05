@@ -16,62 +16,62 @@ const Footer = () => {
             tips, and culinary inspiration. We make home cooking fun, easy, and
             accessible for food lovers of every skill level.
           </p>
-          <ul className="flex flex-row flex-wrap gap-6">
+          <nav className="flex flex-row flex-wrap gap-6">
             <Link href="/">
-              <li className="social-media-list">
+              <div className="social-media-list">
                 <FaFacebookF />
-              </li>
+              </div>
             </Link>
             <Link href={"/"}>
-              <li className="social-media-list">
+              <div className="social-media-list">
                 <RiInstagramFill />
-              </li>
+              </div>
             </Link>
             <Link href={"/"}>
-              <li className="social-media-list">
+              <div className="social-media-list">
                 <FaPinterestP />
-              </li>
+              </div>
             </Link>
             <Link href={"/"}>
-              <li className="social-media-list">
+              <div className="social-media-list">
                 <FaTiktok />
-              </li>
+              </div>
             </Link>
             <Link href={"/"}>
-              <li className="social-media-list">
+              <div className="social-media-list">
                 <FaYoutube />
-              </li>
+              </div>
             </Link>
             <Link href={"/"}>
-              <li className="social-media-list">
+              <div className="social-media-list">
                 <FaXTwitter />
-              </li>
+              </div>
             </Link>
-          </ul>
+          </nav>
         </div>
-        <div className="flex flex-col lg:flex-row w-full max-w-full gap-8 mb-10 lg:gap-16 justify-start lg:justify-end">
-          <ul className="flex flex-col gap-6">
-            <li className="font-bold">Recipes</li>
+        <nav className="flex flex-col lg:flex-row w-full max-w-full gap-8 mb-10 lg:gap-16 justify-start lg:justify-end">
+          <div className="flex flex-col gap-6">
+            <div className="font-bold">Recipes</div>
             <Link href={"/"}>
-              <li>All Recipes</li>
+              <p>All Recipes</p>
             </Link>
             <Link href={"/categories"}>
-              <li>By Category</li>
+              <p>By Category</p>
             </Link>
 
-            <li>Trending</li>
-          </ul>
-          <ul className="flex flex-col gap-6">
-            <li className="font-bold">About</li>
+            <p>Trending</p>
+          </div>
+          <div className="flex flex-col gap-6">
+            <p className="font-bold">About</p>
             <Link href={"/about"}>
-              <li>About Spoon & Fork</li>
+              <p>About Spoon & Fork</p>
             </Link>
-          </ul>
+          </div>
           <ul className="flex flex-col gap-6">
-            <li className="font-bold">Help</li>
-            <li>Contact</li>
+            <p className="font-bold">Help</p>
+            <p>Contact</p>
           </ul>
-        </div>
+        </nav>
       </div>
       <hr className="border-[#E8E8E8] border-solid border-[1px]" />
       <div className="py-10 px-4 lg:px-16 mx-auto w-full max-w-[1240px] hidden md:flex flex-row justify-between">
