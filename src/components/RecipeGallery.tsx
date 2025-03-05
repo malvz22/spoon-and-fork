@@ -21,9 +21,11 @@ const category = [
 const RecipeGallery = () => {
   const [recipes, setRecipes] = useState<Recipe[]>([]);
   const [selected, setSelected] = useState<string>("main course");
+  const [loaded, setLoaded] = useState<boolean>(false);
 
   useEffect(() => {
     async function fetchData() {
+      setLoaded(true);
       try {
         const response: Recipe[] = await getRecipeResponse(
           `recipes/complexSearch`,
@@ -32,6 +34,8 @@ const RecipeGallery = () => {
         setRecipes(response);
       } catch (error) {
         console.error("Error fetching data: ", error);
+      } finally {
+        setLoaded(false);
       }
     }
     fetchData();
@@ -65,7 +69,32 @@ const RecipeGallery = () => {
           </Button>
         </Link>
       </div>
-      <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
+
+      {loaded ? (
+        <div className="w-full max-w-full  text-center py-4">
+          {/* <span className="text-lg font-medium">Loading...</span> */}
+          <div className="lds-dual-ring"></div>
+        </div>
+      ) : (
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
+          {recipes.map((recipe: Recipe) => {
+            return (
+              <Link key={recipe.id} href={`/recipe/${recipe.id}`}>
+                <RecipeCard
+                  image={recipe.image}
+                  title={recipe.title}
+                  id={recipe.id}
+                  servings={recipe.servings}
+                  readyInMinutes={recipe.readyInMinutes}
+                  spoonacularScore={ratingConversion(recipe.spoonacularScore)}
+                  sourceName={recipe.sourceName}
+                />
+              </Link>
+            );
+          })}
+        </div>
+      )}
+      {/* <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
         {recipes.map((recipe: Recipe) => {
           return (
             <Link key={recipe.id} href={`/recipe/${recipe.id}`}>
@@ -81,7 +110,7 @@ const RecipeGallery = () => {
             </Link>
           );
         })}
-      </div>
+      </div> */}
     </div>
   );
 };
