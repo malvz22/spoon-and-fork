@@ -1,22 +1,11 @@
 "use client";
 import { ContactValues } from "@/types/contact";
 import { ErrorMessage, Field, Form, Formik, FormikHelpers } from "formik";
-import { useEffect, useState } from "react";
 import { FaMessage, FaNoteSticky, FaUser } from "react-icons/fa6";
 import { IoMail } from "react-icons/io5";
 import * as Yup from "yup";
 
 const ContactForm = () => {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) {
-    return <div>Loading Form...</div>;
-  }
-
   const initialValues: ContactValues = {
     name: "",
     email: "",
@@ -56,7 +45,7 @@ const ContactForm = () => {
   };
 
   return (
-    <>
+    <main>
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
@@ -128,7 +117,7 @@ const ContactForm = () => {
           </button>
         </Form>
       </Formik>
-    </>
+    </main>
   );
 };
 
