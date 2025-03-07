@@ -1,4 +1,4 @@
-import RecipeList from "@/components/RecipeList";
+import RecipeListExtended from "@/components/RecipeListExtended";
 import { getRecipeResponse } from "@/lib/api";
 
 const Page = async ({ params }: { params: Promise<{ keyword: string }> }) => {
@@ -14,7 +14,7 @@ const Page = async ({ params }: { params: Promise<{ keyword: string }> }) => {
         Search Results for <strong>&quot;{decodedKeyword}&quot;</strong> (
         {searchResults.length} Recipes)
       </h1>
-      <RecipeList api={searchResults} />
+      <RecipeListExtended api={searchResults} />
     </main>
   );
 };
