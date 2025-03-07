@@ -47,7 +47,7 @@ const RecipeGallery = () => {
 
   return (
     <div className="flex flex-col gap-10 w-full max-w-full">
-      <div className="flex flex-row flex-nowrap whitespace-nowrap gap-3 overflow-x-scroll lg:justify-between lg:gap-0 scrollbar-hide w-full max-w-full">
+      <div className="flex flex-row flex-nowrap whitespace-nowrap gap-3 overflow-x-scroll lg:gap-2 lg:flex-wrap scrollbar-hide w-full max-w-full">
         {category.map((cat: string, index) => {
           return (
             <button
@@ -65,7 +65,7 @@ const RecipeGallery = () => {
         })}
         <Link href={"/categories"}>
           <Button>
-            View All Categories <FaArrowRight />
+            All Categories <FaArrowRight />
           </Button>
         </Link>
       </div>

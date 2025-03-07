@@ -64,10 +64,6 @@ export const getDetailedRecipe = async (
     throw new Error(`Failed to fetch data: ${response.statusText}`);
   }
 
-  const remainingQuota = response.headers.get(`X-API-Quota-Left`);
-
-  console.log("Remaining Quota: ", remainingQuota);
-
   const recipeData: DetailedRecipe = await response.json();
 
   return recipeData;
