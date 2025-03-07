@@ -24,15 +24,20 @@ const RecipeListExtended: React.FC<ApiProps> = ({ api }) => {
     );
     const newRecipes = newResponse;
 
+    const existingIds = new Set(recipes.map((recipe) => recipe.id));
+    const filteredNewRecipes = newRecipes.filter(
+      (recipe) => !existingIds.has(recipe.id)
+    );
+
     if (
-      !newRecipes ||
-      newRecipes.length === 0 ||
-      recipes.length + newRecipes.length >= recipeLimit
+      !filteredNewRecipes ||
+      filteredNewRecipes.length === 0 ||
+      recipes.length + filteredNewRecipes.length >= recipeLimit
     ) {
       setMoreRecipe(false);
     }
 
-    setRecipes((prev) => [...prev, ...newRecipes]);
+    setRecipes((prev) => [...prev, ...filteredNewRecipes]);
     setLoading(false);
   };
 
@@ -56,12 +61,6 @@ const RecipeListExtended: React.FC<ApiProps> = ({ api }) => {
         })}
       </div>
       {moreRecipe &&
-        // <button
-        //   onClick={handleViewMore}
-        //   className="text-black border-solid border-[1px] border-[#CCCCCC] px-6 py-3 rounded-[12px] justify-center gap-3 items-center hover:bg-[#F15025] hover:text-white hover:border-[#F15025] transition-all duration-500 mx-auto inline-block w-full max-w-[300px] mt-4"
-        // >
-        //   {loading ? "Loading..." : "View More"}
-        // </button>
         (loading ? (
           <div className="lds-dual-ring mx-auto mt-4"></div>
         ) : (
