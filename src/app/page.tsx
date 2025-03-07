@@ -3,12 +3,13 @@ import Hero from "@/components/Hero";
 import RecipeGallery from "@/components/RecipeGallery";
 import RecipeList from "@/components/RecipeList";
 import { getRecipeResponse } from "@/lib/api";
+import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa";
 
 const Home = async () => {
   const recipe = await getRecipeResponse(
     "recipes/complexSearch",
-    "&sort=meta-score&number=15&addRecipeInformation=true"
+    "&sort=meta-score&number=6&addRecipeInformation=true"
   );
 
   return (
@@ -24,16 +25,20 @@ const Home = async () => {
             </p>
           </div>
           <div className="hidden lg:flex">
-            <Button>
-              View All Trending Recipes <FaArrowRight />
-            </Button>
+            <Link href="/trending">
+              <Button>
+                View All Trending Recipes <FaArrowRight />
+              </Button>
+            </Link>
           </div>
         </div>
         <RecipeList api={recipe} />
         <div className="lg:hidden flex mx-auto">
-          <Button>
-            View All Trending Recipes <FaArrowRight />
-          </Button>
+          <Link href={"/trending"}>
+            <Button>
+              View All Trending Recipes <FaArrowRight />
+            </Button>
+          </Link>
         </div>
       </section>
       <section className="custom-container">
