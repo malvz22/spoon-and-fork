@@ -37,6 +37,10 @@ const Navbar = () => {
     setModalOpen(false);
   };
 
+  const handleCloseMenu = () => {
+    setOpenMenu(false);
+  };
+
   const switchToRegister = () => setModal(false);
 
   const switchToLogin = () => setModal(true);
@@ -81,11 +85,7 @@ const Navbar = () => {
               Categories
             </button>
           </Link>
-          {/* <Link href={"/meal-planner"}>
-            <button className="hover:text-[#F15025] transition-all duration-700">
-              Meal Planner
-            </button>
-          </Link> */}
+
           <Link href={"/about"}>
             <button className="hover:text-[#F15025] transition-all duration-700">
               About
@@ -97,7 +97,7 @@ const Navbar = () => {
             </button>
           </Link>
         </nav>
-        <nav>
+        <nav className="flex flex-row gap-6 text-black">
           {user ? (
             <div className="flex flex-row gap-3 cursor-pointer justify-center items-center">
               <Link href={`/profile/${user.username}`}>
@@ -109,28 +109,30 @@ const Navbar = () => {
                 />
               </Link>
 
-              <p onClick={handleLogout}>Logout</p>
+              <button
+                onClick={handleLogout}
+                className="text-[#f15025] cursor-pointer"
+              >
+                Logout
+              </button>
             </div>
           ) : (
             <div>
-              <p
-                className="text-[#f15025] hidden lg:flex cursor-pointer"
+              <button
+                className="text-[#f15025] cursor-pointer"
                 onClick={handleOpenModal}
               >
                 Login
-              </p>
+              </button>
             </div>
           )}
+          <button
+            className="lg:hidden text-[#F15025] text-[24px]"
+            onClick={handleMenu}
+          >
+            <RxHamburgerMenu />
+          </button>
         </nav>
-
-        {/* Mobile Layout */}
-
-        <button
-          className="lg:hidden text-[#F15025] text-[24px]"
-          onClick={handleMenu}
-        >
-          <RxHamburgerMenu />
-        </button>
       </div>
       <nav
         className={`${
@@ -138,27 +140,34 @@ const Navbar = () => {
         }`}
       >
         <Link href={"/"}>
-          <button className="hover:text-[#F15025] transition-all duration-700 py-2">
+          <button
+            onClick={handleCloseMenu}
+            className="hover:text-[#F15025] transition-all duration-700 py-2"
+          >
             Home
           </button>
         </Link>
         <Link href={"/categories"}>
-          <button className="hover:text-[#F15025] transition-all duration-700 py-2">
+          <button
+            onClick={handleCloseMenu}
+            className="hover:text-[#F15025] transition-all duration-700 py-2"
+          >
             Categories
           </button>
         </Link>
-        {/* <Link href={"/meal-planner"}>
-          <button className="hover:text-[#F15025] transition-all duration-700 py-2">
-            Meal Planner
-          </button>
-        </Link> */}
         <Link href={"/about"}>
-          <button className="hover:text-[#F15025] transition-all duration-700 py-2">
+          <button
+            onClick={handleCloseMenu}
+            className="hover:text-[#F15025] transition-all duration-700 py-2"
+          >
             About
           </button>
         </Link>
         <Link href={"/contact"}>
-          <button className="hover:text-[#F15025] transition-all duration-700 py-2">
+          <button
+            onClick={handleCloseMenu}
+            className="hover:text-[#F15025] transition-all duration-700 py-2"
+          >
             Contact
           </button>
         </Link>
