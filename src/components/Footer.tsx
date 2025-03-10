@@ -11,7 +11,7 @@ const Footer = () => {
           <h1 className="website-name font-bold text-[24px] text-[#F15025] mb-6">
             Spoon & Fork
           </h1>
-          <p className="mb-10">
+          <p className="mb-10 text-black">
             Spoon & Fork: Your destination for mouthwatering recipes, cooking
             tips, and culinary inspiration. We make home cooking fun, easy, and
             accessible for food lovers of every skill level.
@@ -51,25 +51,38 @@ const Footer = () => {
         </div>
         <nav className="flex flex-col lg:flex-row w-full max-w-full gap-8 mb-10 lg:gap-16 justify-start lg:justify-end">
           <div className="flex flex-col gap-6">
-            <div className="font-bold">Recipes</div>
+            <div className="font-bold text-black">Recipes</div>
             <Link href={"/"}>
-              <p>All Recipes</p>
+              <p className="text-black hover:text-[#F15025] transition-colors duration-700">
+                All Recipes
+              </p>
             </Link>
             <Link href={"/categories"}>
-              <p>By Category</p>
+              <p className="text-black hover:text-[#F15025] transition-colors duration-700">
+                By Category
+              </p>
             </Link>
-
-            <p>Trending</p>
+            <Link href={"/trending"}>
+              <p className="text-black hover:text-[#F15025] transition-colors duration-700">
+                Trending
+              </p>
+            </Link>
           </div>
           <div className="flex flex-col gap-6">
-            <p className="font-bold">About</p>
+            <p className="font-bold text-black">About</p>
             <Link href={"/about"}>
-              <p>About Spoon & Fork</p>
+              <p className="text-black hover:text-[#F15025] transition-colors duration-700">
+                About Spoon & Fork
+              </p>
             </Link>
           </div>
           <ul className="flex flex-col gap-6">
-            <p className="font-bold">Help</p>
-            <p>Contact</p>
+            <p className="font-bold text-black">Help</p>
+            <Link href={"/contact"}>
+              <p className="text-black hover:text-[#F15025] transition-colors duration-700">
+                Contact
+              </p>
+            </Link>
           </ul>
         </nav>
       </div>
