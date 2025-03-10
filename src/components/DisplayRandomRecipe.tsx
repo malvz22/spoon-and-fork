@@ -17,9 +17,10 @@ const DisplayRandomRecipe: React.FC<ApiProps> = async ({ api }) => {
                   style={{ objectFit: "cover" }}
                   sizes="100%"
                   className="transform transition duration-500 ease-in-out group-hover:scale-110"
+                  priority={false}
                 />
               </div>
-              <p className="font-bold group-hover:text-[#f15025] transition-colors duration-700">
+              <p className="font-bold group-hover:text-[#f15025] transition-colors duration-700 truncate">
                 {recipeData.title}
               </p>
             </div>

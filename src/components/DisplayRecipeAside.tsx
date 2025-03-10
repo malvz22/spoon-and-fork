@@ -17,6 +17,7 @@ const DisplayRecipeAside: React.FC<ApiProps> = async ({ api }) => {
                   style={{ objectFit: "cover" }}
                   sizes="100%"
                   className="transform transition duration-500 ease-in-out group-hover:scale-110"
+                  priority={false}
                 />
               </div>
               <h3 className="text-md font-bold group-hover:text-[#F15025] transition-colors duration-700">

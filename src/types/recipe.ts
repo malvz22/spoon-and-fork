@@ -32,3 +32,7 @@ export interface DetailedRecipe extends Recipe {
 export interface ApiProps {
   api: Recipe[];
 }
+
+export interface DetailedApiProps {
+  api: DetailedRecipe;
+}
