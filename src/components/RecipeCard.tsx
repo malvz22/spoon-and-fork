@@ -22,6 +22,7 @@ const RecipeCard = ({
           style={{ objectFit: "cover" }}
           className="transform transition duration-500 ease-in-out group-hover:scale-110"
           sizes="100%"
+          priority={false}
         />
       </div>
       <p className="text-2xl truncate font-medium group-hover:text-[#F15025] transition-colors duration-700">

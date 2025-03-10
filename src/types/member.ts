@@ -7,3 +7,7 @@ export interface Member {
     large: string;
   };
 }
+
+export interface ApiProps {
+  api: Member[];
+}
