@@ -18,7 +18,7 @@ A beautifully designed **Recipe Finder** built with **Next,js**, **TypeScript**,
 
 ### Home Page
 
-![Home Page](/readme-screenshot/home-page.jpg)
+![Home Page](public/readme-screenshot/home-page.jpg)
 
 First, run the development server:
 
