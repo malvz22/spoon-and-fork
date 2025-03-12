@@ -20,7 +20,45 @@ A beautifully designed **Recipe Finder** built with **Next,js**, **TypeScript**,
 
 ![Home Page](public/readme-screenshot/home-page.jpg)
 
-First, run the development server:
+### Category Page
+
+![Home Page](public/readme-screenshot/categories-page.jpg)
+
+### Recipe Detail Page
+
+![Home Page](public/readme-screenshot/recipe-page.jpg)
+
+## 🔧 Installation & Setup
+
+1. **Clone the repository:**
+
+   ```sh
+   git clone https://github.com/malvz22/spoon-and-fork.git
+
+   ```
+
+2. **Install Dependencies:**
+
+   npm install
+
+   # or
+
+   yarn install
+
+3. **Set uo environment variables:**
+
+   NEXT_PUBLIC_API_KEY=your_spoonacular_api_key
+
+4. **Run the development server**
+
+   npm run dev
+
+   # or
+
+   yarn dev
+
+5. **Open http://localhost:3000/ in your browser**
+   First, run the development server:
 
 ```bash
 npm run dev
