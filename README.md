@@ -14,6 +14,12 @@ A beautifully designed **Recipe Finder** built with **Next,js**, **TypeScript**,
 
 ✅ **Responsive** design
 
+## 🚀 Tech Stack
+
+- **Frontend:** Next.js, TypeScript, Tailwind CSS
+- **Data Fetching:** Spoonacular API
+- **Version Control:** GitHub
+
 ## 📸 Screenshots
 
 ### Home Page
@@ -39,15 +45,18 @@ A beautifully designed **Recipe Finder** built with **Next,js**, **TypeScript**,
 
 2. **Install Dependencies:**
 
-   ````sh
+   ```sh
    npm install
+   ```
+
+````
 
    or
 
-   ```sh
+    ```sh
    yarn install
 
-   ````
+````
 
 3. **Set uo environment variables:**
 
@@ -58,14 +67,36 @@ A beautifully designed **Recipe Finder** built with **Next,js**, **TypeScript**,
 
 4. **Run the development server**
 
-   ````sh
+   ```sh
    npm run dev
+   ```
 
    or
 
    ```sh
    yarn dev
-
-   ````
+   ```
 
 5. **Open http://localhost:3000/ in your browser**
+
+## 📌 Usage
+
+1. Navigate through trending recipes
+
+2. Click on a recipe to see details
+
+3. Use the search bar to find recipes by keyword
+
+4. Click "View More" to load additional recipes
+
+5. Enjoy planning your meals! 🍽️
+
+## 📝 API Reference
+
+- **Spoonacular API**
+  Base URL: `https://api.spoonacular.com`
+  Example endpoint:
+  ```sh
+  GET /recipes/complexSearch?query=pasta&number=10&apiKey=YOUR_API_KEY
+  ```
+  Documentation Link: https://spoonacular.com/food-api/docs
