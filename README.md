@@ -101,7 +101,7 @@ A beautifully designed **Recipe Finder** built with **Next,js**, **TypeScript**,
 
   Documentation Link: https://spoonacular.com/food-api/docs
 
-  ## 🛠️ Future Improvements
+## 🛠️ Future Improvements
 
 - [ ] User Authentication (Sign up & Login)
 - [ ] Save favorite recipes
