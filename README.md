@@ -49,20 +49,16 @@ A beautifully designed **Recipe Finder** built with **Next,js**, **TypeScript**,
    npm install
    ```
 
-````
-
    or
 
-    ```sh
+   ```sh
    yarn install
+   ```
 
-````
-
-3. **Set uo environment variables:**
+3. **Set up environment variables:**
 
    ```sh
    NEXT_PUBLIC_API_KEY=your_spoonacular_api_key
-
    ```
 
 4. **Run the development server**
@@ -94,9 +90,25 @@ A beautifully designed **Recipe Finder** built with **Next,js**, **TypeScript**,
 ## 📝 API Reference
 
 - **Spoonacular API**
+
   Base URL: `https://api.spoonacular.com`
+
   Example endpoint:
+
   ```sh
   GET /recipes/complexSearch?query=pasta&number=10&apiKey=YOUR_API_KEY
   ```
+
   Documentation Link: https://spoonacular.com/food-api/docs
+
+  ## 🛠️ Future Improvements
+
+- [ ] User Authentication (Sign up & Login)
+- [ ] Save favorite recipes
+- [ ] Advanced filtering (by nutrition, prep time, etc.)
+- [ ] Meal planner calendar integration
+
+## 🏆 Credits
+
+- **Developed by:** [malvz22](https://github.com/malvz22)
+- **API Used:** [Spoonacular API](https://spoonacular.com/)
