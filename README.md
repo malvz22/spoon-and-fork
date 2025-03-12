@@ -1,6 +1,24 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🍽️ Spoon & Fork
 
-## Getting Started
+A beautifully designed **Recipe Finder** built with **Next,js**, **TypeScript**, and **Tailwind CSS**. This website helps users discover trending recipes, and explore detailed cooking instructions.
+
+## 🌟 Features
+
+✅ Browse **trending recipes**
+
+✅ Search for recipes based on **keywords and categories** (more comming soon!)
+
+✅ View **detailed recipe information**, including ingredients, cooking instructions, and nutrition facts.
+
+✅ **View More** button for **infinite scrolling** (up to 100 recipes)
+
+✅ **Responsive** design
+
+## 📸 Screenshots
+
+### Home Page
+
+![Home Page](/readme-screenshot/home-page.jpg)
 
 First, run the development server:
 
