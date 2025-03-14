@@ -136,7 +136,9 @@ const Navbar = () => {
       </div>
       <nav
         className={`${
-          openMenu ? "flex flex-col lg:hidden text-center" : "hidden"
+          openMenu
+            ? "flex flex-col lg:hidden text-center animate-slide-in-top"
+            : "hidden"
         }`}
       >
         <Link href={"/"}>

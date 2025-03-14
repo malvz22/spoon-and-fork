@@ -22,10 +22,15 @@ export default {
           "0%": { opacity: "1" },
           "100%": { opacity: "0" },
         },
+        slideInTop: {
+          "0%": { transform: "translateY(-100%)", opacity: "0" },
+          "100%": { transform: "translate(0)", opacity: "1" },
+        },
       },
       animation: {
         fadeIn: "fadeIn 1.1s ease-in-out forwards",
         fadeOut: "fadeOut 1.1s ease-in-out forwards",
+        "slide-in-top": "slideInTop 0.8s ease-in-out forwards",
       },
     },
   },
