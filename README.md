@@ -40,7 +40,10 @@ A beautifully designed **Recipe Finder** built with **Next,js**, **TypeScript**,
 
    ```sh
    git clone https://github.com/malvz22/spoon-and-fork.git
+   ```
 
+   ```sh
+   cd spoon-and-fork
    ```
 
 2. **Install Dependencies:**
@@ -56,6 +59,10 @@ A beautifully designed **Recipe Finder** built with **Next,js**, **TypeScript**,
    ```
 
 3. **Set up environment variables:**
+
+   ```sh
+   NEXT_PUBLIC_API_BASE_URL=https://api.spoonacular.com
+   ```
 
    ```sh
    NEXT_PUBLIC_API_KEY=your_spoonacular_api_key
@@ -100,13 +107,6 @@ A beautifully designed **Recipe Finder** built with **Next,js**, **TypeScript**,
   ```
 
   Documentation Link: https://spoonacular.com/food-api/docs
-
-## 🛠️ Future Improvements
-
-- [ ] User Authentication (Sign up & Login)
-- [ ] Save favorite recipes
-- [ ] Advanced filtering (by nutrition, prep time, etc.)
-- [ ] Meal planner calendar integration
 
 ## 🏆 Credits
 

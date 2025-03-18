@@ -32,7 +32,11 @@ const Page = async ({ params }: { params: Promise<{ id: number }> }) => {
       <article>{parse(recipeData.summary)}</article>
       <div className="w-full max-w-full aspect-video relative rounded-[14px] overflow-hidden">
         <Image
-          src={recipeData.image}
+          src={
+            "https://spoonacular.com/recipeImages/" +
+            recipeData.id +
+            "-636x393.jpg"
+          }
           alt="food"
           fill
           style={{ objectFit: "cover" }}

@@ -69,6 +69,11 @@ export const getDetailedRecipe = async (
   return recipeData;
 };
 
+// export const getRecipeImage = async (recipeId: number): Promise<DetailedRecipe> => {
+//   if (!recipeId) throw new Error("Invalid recipe ID");
+//   const response = await fetch();
+// }
+
 export const getSimilarRecipe = async (recipeId: number): Promise<Recipe[]> => {
   if (!recipeId) throw new Error("Invalid recipe ID");
 
